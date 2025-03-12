@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+:root {
+    --color-primary: #4502C7;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #F8F8F8;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Container */
+.container {
+    width: 1184px;
+    margin: 0 auto;
+}
+
+@media(max-width: 1199.98px) {
+    .container {
+        width: 960px;
+    }
+}
+
+@media(max-width: 991.98px) {
+    .container {
+        width: 720px;
+    }
+}
+
+@media(max-width: 767.98px) {
+    .container {
+        width: 540px;
+    }
+}
+
+@media(max-width: 575.98px) {
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+}
+
+/* End Container */
+
+/* Top Header */
+
+.top-header {
+    background-color: var(--color-primary);
+    padding: 10px 0;
+}
+
+.top-header .inner-wrap {
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+.top-header .inner-item {
+    color: #FFFBEB;
+    font-weight: 400;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-header .inner-item i {
+    font-size: 20px;
+}
+
+@media (max-width: 767.98px) {
+    .top-header {
+        display: none;
+    }
+}
+
+/* End Top Header */
+
+/* Header */
+
+.header {
+    background-color: #FFFFFF;
+    padding: 12px 0;
+}
+
+.header .inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .inner-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.header .inner-menu > ul {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+}
+
+.header .inner-menu > ul > li > a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #25282B;
+    text-transform: capitalize;
+}
+
+.header .inner-menu > ul > li > a.active,
+.header .inner-menu > ul > li:hover > a,
+.header .inner-menu > ul > li:hover > i{
+    color: var(--color-primary);
+}
+
+.header .inner-menu>ul>li {
+    position: relative;
+}
+
+
+.header .inner-cart a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.header .inner-cart img {
+    height: 26px;
+    width: auto;
+}
+
+.header .inner-cart span {
+    background-color: #FF3904;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 120%;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 1px 5px;
+    margin-left: 4px;
+    position: relative;
+}
+
+.header .inner-cart span::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-right: 3.7px solid #FF3904;
+    position: absolute;
+    left: -3.6px;
+    top: 5.5px;
+}
+
+.header .inner-menu > ul > li i {
+    margin-left: 4px;
+}
+
+.header .inner-menu > ul > li > ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    background-color: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+    padding: 8px 0;
+    width: 280px;
+    z-index: 999;
+    display: none;
+}
+
+.header .inner-menu > ul > li > ul a {
+    display: block;
+    padding: 8px 22px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-primary);
+}
+
+.header .inner-menu > ul > li > ul a:hover {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+}
+
+.header .inner-menu>ul>li:hover>ul {
+    display: block;
+}
+
+.header .inner-menu-mobile{
+    display: none;
+}
+
+@media (max-width: 1199.98px){
+    .header .inner-menu > ul{
+        gap: 24px;
+    }
+}
+
+@media (max-width: 991.98px){
+    .header .inner-menu{
+        display: none;
+    }
+    .header .inner-menu-mobile{
+        display: block;
+        background-color: #FFFFFF;
+        border: 0;
+        color: #25282B;
+        padding: 0;
+        font-size: 22px;
+        cursor: pointer;
+    }
+}
+
+@media(max-width: 575.98px) {
+    .header{
+        padding: 15px 0;
+    }
+
+    .header .inner-logo img{
+        height: 40px;
+    }
+}
+/* End Header */
