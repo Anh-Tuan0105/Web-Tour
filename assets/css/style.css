@@ -240,3 +240,115 @@ a {
     }
 }
 /* End Header */
+
+/* Section-1 */
+.section-1{
+    background-image: url(../images/image\ 129.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 106px 0 108px 0;
+}
+
+.section-1 .inner-wrap{
+    width: 768px;
+    margin: 0 auto;
+}
+
+.section-1 .inner-title{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 1.8px;
+    color: var(--color-primary);
+}
+
+.section-1 .inner-desc{
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #25282B;
+}
+
+.section-1 .inner-form{
+    background-color: #00000066;
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+.section-1 .inner-form .inner-address{
+    width: 100%;
+}
+
+.section-1 .inner-form .inner-user, .section-1 .inner-form .inner-calendar{
+    width: 37.5%;
+}
+.section-1 .inner-form .inner-button{
+    flex: 1;
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    border: 0;
+    color: #FFFFFF;
+    box-shadow: 0px 3.3px 3.3px 0px #00000040;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.section-1 .inner-form .inner-button i{
+    font-size: 20px;
+}
+
+.section-1 .inner-form .inner-button:hover{
+    background-color: #2a0771;
+}
+
+.section-1 .inner-form .inner-input-group{
+    background-color: #FFFFFF;
+    padding: 18px 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.section-1 .inner-form .inner-input-group .inner-icon{
+    height: 20px;
+    width: auto;
+    margin-right: 13px;
+    color: var(--color-primary);
+}
+
+.section-1 .inner-form .inner-input-group .inner-input{
+    border: 0;
+    flex: 1;
+    outline: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 118%;
+    letter-spacing: 0.6px;
+}
+
+.section-1 .inner-form .inner-input-group .inner-input::placeholder{
+    color: #A6A6A6;
+}
+
+.section-1 .inner-form .inner-input-group .inner-down{
+    font-size: 10px;
+    color: var(--color-primary);
+}
+
+
+/* End Section-1 */
