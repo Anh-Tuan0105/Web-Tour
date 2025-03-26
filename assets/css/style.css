@@ -98,10 +98,10 @@ a {
 .header {
     background-color: #FFFFFF;
     padding: 12px 0;
-    /* position: sticky;
+    position: sticky;
     top: 0;
     left: 0;
-    z-index: 999; */
+    z-index: 999;
 }
 
 .header .inner-wrap {
@@ -1848,7 +1848,7 @@ a {
     padding: 24px;
     border-radius: 10px;
     position: sticky;
-    top: 0;
+    top: 80px;
     left: 0;
 }
 
