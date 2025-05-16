@@ -108,3 +108,66 @@ if (boxAddressSection1) {
     })
 }
 // End Box User Section 1
+
+// Clock Expire
+const clockExpire = document.querySelector("[clock-expire]");
+if (clockExpire) {
+    const expireDateTimeString = clockExpire.getAttribute("clock-expire");
+    const expireDateTime = new Date(expireDateTimeString);
+
+    const updateClock = () => {
+        const now = new Date();
+        const remainingTime = expireDateTime - now;
+
+        if (remainingTime > 0) {
+            const days = Math.floor(remainingTime / (24 * 60 * 60 * 1000));
+            const hours = Math.floor((remainingTime / (60 * 60 * 1000)) % 24);
+            const minutes = Math.floor((remainingTime / (60 * 1000)) % 60);
+            const seconds = Math.floor((remainingTime / 1000) % 60);
+
+            const listBoxNumber = clockExpire.querySelectorAll(".inner-number");
+
+            listBoxNumber[0].innerHTML = days >= 10 ? days : `0${days}`;
+            listBoxNumber[1].innerHTML = hours >= 10 ? hours : `0${hours}`;
+            listBoxNumber[2].innerHTML = minutes >= 10 ? minutes : `0${minutes}`;
+            listBoxNumber[3].innerHTML = seconds >= 10 ? seconds : `0${seconds}`;
+
+        } else {
+            clearInterval(intervalClock);
+        }
+    }
+
+    const intervalClock = setInterval(updateClock, 1000);
+}
+// End Clock Expire
+
+// Box Filter
+const buttonFilterMobile = document.querySelector(".section-9 .inner-filter-mobile");
+if(buttonFilterMobile) {
+    const boxLeft = document.querySelector(".section-9 .inner-left");
+    buttonFilterMobile.addEventListener("click", () => {
+        boxLeft.classList.add("active");
+    })
+
+    const overlay = document.querySelector(".section-9 .inner-left .inner-overlay");
+    overlay.addEventListener("click", () => {
+        boxLeft.classList.remove("active");
+    })
+}
+// End Box Filter
+
+// Box Tour Info
+const boxTourInfo = document.querySelector(".box-tour-info");
+if(boxTourInfo) {
+    const buttonReadMore = boxTourInfo.querySelector(".inner-read-more button");
+    buttonReadMore.addEventListener("click" , () => {
+        if(boxTourInfo.classList.contains("active")){
+            boxTourInfo.classList.remove("active");
+            buttonReadMore.innerHTML = "Xem tất cả";
+        } else {
+            boxTourInfo.classList.add("active");
+            buttonReadMore.innerHTML = "Ẩn bớt";
+        }
+    })
+}
+// End Box Tour Info

@@ -668,19 +668,26 @@ a {
     margin-bottom: 47px;
 }
 
-.section-2 .inner-info .inner-clock-number span {
+.section-2 .inner-info .inner-clock-number .inner-item {
     width: 57px;
     height: 57px;
     background-color: #FFFFFF;
     font-weight: 700;
-    font-size: 30px;
-    line-height: 121%;
     border-radius: 10px;
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: var(--color-primary);
 }
+
+.section-2 .inner-info .inner-clock-number .inner-item .inner-number {
+    font-size: 24px;
+}
+.section-2 .inner-info .inner-clock-number .inner-item .inner-label {
+    font-size: 12px;
+}
+
 
 .section-2 .inner-info .inner-discount-tiltle {
     font-weight: 700;
@@ -1077,7 +1084,6 @@ a {
     display: inline-block;
     font-weight: 500;
     font-size: 16px;
-    line-height: 100%;
     background-color: #FFFFFF;
     border: 2px solid var(--color-primary);
     padding: 14px 25px;
@@ -1594,6 +1600,8 @@ a {
     }
 }
 
+
+
 /* End Box Contact */
 
 
@@ -1692,7 +1700,6 @@ a {
 .section-9 .inner-left {
     width: 23.5%;
     margin-right: 23px;
-
 }
 
 .section-9 .inner-right {
@@ -1788,6 +1795,34 @@ a {
 @media (max-width: 991.98px) {
     .section-9 .inner-left {
         display: none;
+    }
+
+    .section-9 .inner-left.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1005;
+        width: 100%;
+        height: 100%;
+        margin-right: 0;
+    }
+
+    .section-9 .inner-left .box-filter {
+        width: 280px;
+        height: 100%;
+        border-radius: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-9 .inner-left .inner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00000059;
     }
 
     .section-9 .inner-filter-mobile {
@@ -2329,7 +2364,6 @@ a {
 .box-tour-info .inner-title {
     font-weight: 600;
     font-size: 20px;
-    line-height: 100%;
     color: var(--color-primary);
     margin-bottom: 15px;
 }
@@ -2337,7 +2371,6 @@ a {
 .box-tour-info .inner-content p {
     font-weight: 300;
     font-size: 14px;
-    line-height: 100%;
     color: #080A12;
     margin-top: 0;
     margin-bottom: 10px;
@@ -2347,11 +2380,22 @@ a {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.box-tour-info .inner-content {
+    height: 670px;
+    overflow: hidden;
+}
+
+.box-tour-info.active .inner-content {
+    height: auto;
+    overflow: visible;
 }
 
 .box-tour-info .inner-read-more {
     text-align: center;
+    margin-top: 20px;
 }
 
 @media (max-width: 575.98px) {
