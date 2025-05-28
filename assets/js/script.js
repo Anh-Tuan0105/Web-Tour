@@ -143,7 +143,7 @@ if (clockExpire) {
 
 // Box Filter
 const buttonFilterMobile = document.querySelector(".section-9 .inner-filter-mobile");
-if(buttonFilterMobile) {
+if (buttonFilterMobile) {
     const boxLeft = document.querySelector(".section-9 .inner-left");
     buttonFilterMobile.addEventListener("click", () => {
         boxLeft.classList.add("active");
@@ -158,10 +158,10 @@ if(buttonFilterMobile) {
 
 // Box Tour Info
 const boxTourInfo = document.querySelector(".box-tour-info");
-if(boxTourInfo) {
+if (boxTourInfo) {
     const buttonReadMore = boxTourInfo.querySelector(".inner-read-more button");
-    buttonReadMore.addEventListener("click" , () => {
-        if(boxTourInfo.classList.contains("active")){
+    buttonReadMore.addEventListener("click", () => {
+        if (boxTourInfo.classList.contains("active")) {
             boxTourInfo.classList.remove("active");
             buttonReadMore.innerHTML = "Xem tất cả";
         } else {
@@ -171,3 +171,25 @@ if(boxTourInfo) {
     })
 }
 // End Box Tour Info
+
+
+// Init AOS
+AOS.init();
+// End AOS
+
+// Swiper Section 2
+const swiperSection2 = document.querySelector(".swiper-section-2");
+if (swiperSection2) {
+    swiper = new Swiper(".swiper-section-2", {
+        slidesPerView: 3,
+        direction: "horizontal",
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+}
+
+
+// End Swiper Section 2
