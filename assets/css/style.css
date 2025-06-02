@@ -726,7 +726,7 @@ a {
 
     .section-2 .inner-list {
         width: 68%;
-        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: repeat(2, 1fr); */
     }
 
     .section-2 .product-item:nth-child(3) {
@@ -741,7 +741,7 @@ a {
 
     .section-2 .inner-list {
         width: 50%;
-        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-columns: repeat(1, 1fr); */
     }
 
     .section-2 .product-item:nth-child(2) {
@@ -973,11 +973,26 @@ a {
     padding-bottom: 60px;
 }
 
-.section-3 .inner-wrap {
+.section-3 .swiper-wrapper {
+    padding-bottom: 45px;
+}
+
+.section-3 .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: #D9D9D9;
+    opacity: 1;
+}
+
+.section-3 .swiper-pagination-bullet-active {
+    background-color: var(--color-primary);
+}
+
+/* .section-3 .inner-wrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-}
+} */
 
 .section-3 .inner-wrap .inner-item {
     aspect-ratio: 382/269;
@@ -993,9 +1008,9 @@ a {
 }
 
 @media (max-width: 991.98px) {
-    .section-3 .inner-wrap {
+    /* .section-3 .inner-wrap {
         grid-template-columns: repeat(2, 1fr);
-    }
+    } */
 
     .section-3 .inner-item:nth-child(3) {
         display: none;
@@ -1007,9 +1022,9 @@ a {
         padding-bottom: 45px;
     }
 
-    .section-3 .inner-wrap {
+    /* .section-3 .inner-wrap {
         grid-template-columns: repeat(1, 1fr);
-    }
+    } */
 
     .section-3 .inner-item:nth-child(2) {
         display: none;
@@ -2087,11 +2102,11 @@ a {
     object-fit: cover;
 }
 
-.box-images .inner-images-thumb {
+/* .box-images .inner-images-thumb {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-}
+} */
 
 .box-images .inner-images-thumb .inner-image {
     aspect-ratio: 166/129;
@@ -2110,9 +2125,9 @@ a {
         margin-bottom: 15px;
     }
 
-    .box-images .inner-images-thumb {
+    /* .box-images .inner-images-thumb {
         gap: 5px;
-    }
+    } */
 }
 
 /* End Box Images */
@@ -3026,12 +3041,13 @@ a {
 
 /* End Section-12 */
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
+/* Swiper Section-2 */
+.section-2 .swiper-button-prev::after,
+.section-2 .swiper-button-next::after {
     display: none;
 }
 
-.custom-arrow {
+.section-2 .custom-arrow {
     width: 38px;
     height: 38px;
     display: flex;
@@ -3042,7 +3058,7 @@ a {
     cursor: pointer;
 }
 
-.swiper-button-prev.custom-arrow {
+.section-2 .swiper-button-prev.custom-arrow {
     position: absolute;
     top: 48%;
     left: -25px;
@@ -3050,7 +3066,7 @@ a {
     border-bottom-left-radius: 50%;
 }
 
-.swiper-button-next.custom-arrow {
+.section-2 .swiper-button-next.custom-arrow {
     position: absolute;
     top: 49%;
     right: -25px;
@@ -3058,20 +3074,36 @@ a {
     border-bottom-right-radius: 50%;
 }
 
-.swiper-button-prev.custom-arrow::before {
+.section-2 .swiper-button-prev.custom-arrow::before {
     content: "\f104";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     font-size: 12px;
 }
 
-.swiper-button-next.custom-arrow::before {
+.section-2 .swiper-button-next.custom-arrow::before {
     content: "\f105";
     font-family: "Font Awesome 6 Free";
     font-weight: 600;
     font-size: 12px;
 }
 
-.swiper {
+.section-2 .swiper {
     z-index: 102;
 }
+
+/* End Swiper Section-2*/
+
+/* Viewer */
+.viewer-toolbar>ul>li {
+    background-color: var(--color-primary);
+}
+
+.viewer-button {
+    background-color: red;
+}
+
+.viewer-button:hover {
+    background-color: rgb(113, 0, 0);
+}
+/* End Viewer */

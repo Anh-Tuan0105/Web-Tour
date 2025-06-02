@@ -169,6 +169,8 @@ if (boxTourInfo) {
             buttonReadMore.innerHTML = "Ẩn bớt";
         }
     })
+
+    new Viewer(boxTourInfo);
 }
 // End Box Tour Info
 
@@ -181,15 +183,83 @@ AOS.init();
 const swiperSection2 = document.querySelector(".swiper-section-2");
 if (swiperSection2) {
     swiper = new Swiper(".swiper-section-2", {
-        slidesPerView: 3,
+        slidesPerView: 1,
         direction: "horizontal",
         spaceBetween: 20,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
+        autoplay: {
+            delay: 2500,
+        },
+        loop: true,
+        breakpoints: {
+            992: {
+                slidesPerView: 2,
+            },
+            1200: {
+                slidesPerView: 3,
+            }
+        },
     });
 }
-
-
 // End Swiper Section 2
+
+// Swiper Section 3
+const swiperSection3 = document.querySelector(".swiper-section-2");
+if (swiperSection3) {
+    swiper = new Swiper(".swiper-section-3", {
+        slidesPerView: 1,
+        direction: "horizontal",
+        spaceBetween: 20,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        autoplay: {
+            delay: 2500,
+        },
+        loop: true,
+        breakpoints: {
+            576: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            }
+        },
+    });
+}
+// End Swiper Section 3
+
+// Box Images
+const boxImages = document.querySelector(".box-images");
+if (boxImages) {
+    const swiperBoxImagesThumb = new Swiper(".swiper-box-images-thumb", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+    });
+    const swiperBoxImagesMain = new Swiper(".swiper-box-images-main", {
+        spaceBetween: 10,
+        thumbs: {
+            swiper: swiperBoxImagesThumb,
+        },
+    });
+}
+// End Box Images
+
+// Zoom Picture Images Man
+const boxImagesMan = document.querySelector(".box-images .inner-images-main");
+if (boxImagesMan) {
+    new Viewer(boxImagesMan);
+}
+// End Zoom Picture Images Man
+
+// Zoom Picture Tour Schedule
+const boxTourSchedule = document.querySelector(".box-tour-schedule");
+if(boxTourSchedule) {
+    new Viewer(boxTourSchedule);
+}
+// End Zoom Picture Tour Schedule
