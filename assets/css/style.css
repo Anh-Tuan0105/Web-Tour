@@ -1374,7 +1374,19 @@ a {
     padding: 12px;
     display: flex;
     gap: 12px;
+    position: relative;
 }
+
+.footer .inner-top .inner-form .just-validate-error-label {
+    position: absolute;
+    top: 104%;
+    left: 15px;
+    color: #e39090 !important;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
 
 .footer .inner-top .inner-form input {
     flex: 1;
@@ -2721,6 +2733,15 @@ a {
 .section-11 .inner-coupon form {
     width: 429px;
     display: flex;
+    position: relative;
+}
+
+.section-11 .inner-coupon form .just-validate-error-label {
+    position: absolute;
+    top: 104%;
+    left: 12px;
+    font-size: 14px;
+    color: #ea4d4d !important;
 }
 
 .section-11 .inner-coupon form input {
@@ -2915,6 +2936,12 @@ a {
     outline: none;
 }
 
+.section-12 .inner-info .inner-item .just-validate-error-label {
+    font-size: 14px;
+    color: #fc4e4e !important;
+    margin-top: 4px;
+}
+
 .section-12 .inner-info .inner-item input {
     height: 50px;
     padding: 0 20px;
@@ -2950,7 +2977,7 @@ a {
     width: 21px;
     height: 21px;
     accent-color: var(--color-primary);
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .section-12 .inner-method .inner-list .inner-item label {
@@ -2964,6 +2991,11 @@ a {
     background-color: #F3F3F3;
     border-radius: 4px;
     padding: 15px;
+    display: none;
+}
+
+.section-12 .inner-method .inner-info-bank.active {
+    display: block;
 }
 
 .section-12 .inner-method .inner-info-bank .inner-title {
@@ -3107,3 +3139,11 @@ a {
     background-color: rgb(113, 0, 0);
 }
 /* End Viewer */
+
+.just-validate-error-field {
+    border-color: red !important;
+}
+
+.just-validate-success-field {
+    border-color: green !important;
+}

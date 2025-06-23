@@ -259,7 +259,100 @@ if (boxImagesMan) {
 
 // Zoom Picture Tour Schedule
 const boxTourSchedule = document.querySelector(".box-tour-schedule");
-if(boxTourSchedule) {
+if (boxTourSchedule) {
     new Viewer(boxTourSchedule);
 }
 // End Zoom Picture Tour Schedule
+
+// Email Form
+const emailForm = document.querySelector("#email-form");
+if (emailForm) {
+    const validator = new JustValidate('#email-form');
+
+    validator
+        .addField("#email-input", [
+            {
+                rule: "required",
+                errorMessage: "Vui lòng nhập email của bạn!"
+            },
+            {
+                rule: "email",
+                errorMessage: "Email không đúng định dạng!"
+            }
+        ])
+        .onSuccess((event) => {
+            // console.log(event);
+            event.currentTarget.submit();
+        });
+}
+// End Email Form
+
+// Coupon Form
+const couponForm = document.querySelector("#coupon-form");
+if (couponForm) {
+    const validator = new JustValidate('#coupon-form');
+
+    validator
+        .addField("#coupon-input", [
+            {
+                rule: "required",
+                errorMessage: "Vui lòng nhập mã giảm giá!"
+            }
+        ])
+        .onSuccess((event) => {
+            event.currentTarget.submit();
+        })
+}
+// End Coupon Form
+
+// Order Form
+const orderForm = document.querySelector("#order-form");
+if (orderForm) {
+    const validator = new JustValidate('#order-form');
+
+    validator
+        .addField("#order-name", [
+            {
+                rule: "required",
+                errorMessage: "Vui lòng nhập tên!"
+            },
+            {
+                rule: "minLength",
+                value: 5,
+                errorMessage: "Vui lòng nhập tối thiểu 5 kí tự!"
+            },
+            {
+                rule: "maxLength",
+                value: 50,
+                errorMessage: "Vui lòng không nhập quá 50 kí tự!"
+            }
+        ])
+        .addField("#order-phone", [
+            {
+                rule: "required",
+                errorMessage: "Vui lòng nhập số điện thoại!"
+            },
+            {
+                rule: 'customRegexp',
+                value: /^(0|\+84|84)(3|5|7|8|9)[0-9]{8}$/,
+                errorMessage: "Số điện thoại không đúng định dạng"
+            }
+        ])
+        .onSuccess((event) => {
+            event.currentTarget.submit();
+        })
+    
+    const listInputMethod = orderForm.querySelectorAll('input[name="method"]');
+    const infoBank = orderForm.querySelector(".inner-info-bank");
+    listInputMethod.forEach(input => {
+        input.addEventListener("change", () => {
+            const value = input.value;
+            if(value == "bank") {
+                infoBank.classList.add("active");
+            } else {
+                infoBank.classList.remove("active");
+            }
+        })
+    })
+}
+// End Order Form
